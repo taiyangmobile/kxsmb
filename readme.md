@@ -10,8 +10,15 @@ First you need download, configure and build [samba](http://www.samba.org).
 For this open console and type in
 	
 	cd kxsmb	
+	--新增一下代码 用于安装autoconf
+	curl -OL http://ftpmirror.gnu.org/autoconf/autoconf-2.69.tar.gz
+	tar -xzf autoconf-2.69.tar.gz
+	cd autoconf-2.69
+	./configure
+	make
+	sudo make install
 	rake
-
+	
 ### Usage
 
 1. Drop files from kxsmb/libs folder in your project.
