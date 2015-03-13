@@ -10,13 +10,28 @@ First you need download, configure and build [samba](http://www.samba.org).
 For this open console and type in
 	
 	cd kxsmb	
-	--新增一下代码 用于安装autoconf
-	curl -OL http://ftpmirror.gnu.org/autoconf/autoconf-2.69.tar.gz
-	tar -xzf autoconf-2.69.tar.gz
-	cd autoconf-2.69
-	./configure
+	--新增以下代码 用于安装autoconf
+	curl -O http://mirrors.kernel.org/gnu/autoconf/autoconf-2.65.tar.gz
+	tar -xzvf autoconf-2.65.tar.gz
+	cd autoconf-2.65
+	./configure –prefix=/usr/local
 	make
 	sudo make install
+	cd ..
+	curl -O http://mirrors.kernel.org/gnu/automake/automake-1.11.tar.gz
+	tar xzvf automake-1.11.tar.gz
+	cd automake-1.11
+	./configure –prefix=/usr/local
+	make
+	sudo make install
+	cd ..
+	curl -O http://mirrors.kernel.org/gnu/libtool/libtool-2.2.6b.tar.gz
+	tar xzvf libtool-2.2.6b.tar.gz
+	cd libtool-2.2.6b
+	./configure –prefix=/usr/local
+	make
+	sudo make install
+	--然后在运行rake就一次可以通过了
 	rake
 	
 ### Usage
